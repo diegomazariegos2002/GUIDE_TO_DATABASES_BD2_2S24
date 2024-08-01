@@ -1,0 +1,7 @@
+# Ignorar todos los archivos dentro de las carpetas backup y pg1-path
+src/backup/*
+src/pg1-path/*
+
+# Pero no ignorar las propias carpetas backup y pg1-path
+!src/backup/
+!src/pg1-path/

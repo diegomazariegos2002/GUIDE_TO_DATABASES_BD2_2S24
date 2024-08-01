@@ -1,0 +1,2 @@
+# Para no modifcar los saltos de linea en los archivos de bash y mantenerlos en LF para linux/Contenedores
+*.sh text eol=lf
