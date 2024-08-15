@@ -9,6 +9,12 @@ ENV POSTGRES_DB=bd2_2s24
 # Crear directorio en el contenedor para los backups
 RUN mkdir -p /backups
 
+# Configurar PostgreSQL para habilitar los logs detallados
+RUN echo "log_min_messages = info" >> /usr/share/postgresql/postgresql.conf.sample
+RUN echo "client_min_messages = notice" >> /usr/share/postgresql/postgresql.conf.sample
+RUN echo "log_statement = 'all'" >> /usr/share/postgresql/postgresql.conf.sample
+RUN echo "log_duration = on" >> /usr/share/postgresql/postgresql.conf.sample
+
 # Configurar el archivo postgresql.conf para habilitar el modo WAL y el archivado.
 #   Con el fin de tener respaldo continuo.
 
