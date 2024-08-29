@@ -7,7 +7,11 @@ ENV POSTGRES_PASSWORD=root1234
 ENV POSTGRES_DB=bd2_2s24
 
 # Crear directorio en el contenedor para los backups
-RUN mkdir -p /backups
+# Permisos de lectura para el usuario comunmente postgres que es el que ejecuta el servicio de pgbackrest.
+# Nota: Se recomienda montar un volumen para almacenar los backups en el host
+RUN mkdir -p /backups \
+    && chmod 750 /backups \
+    && chown postgres:postgres /backups
 
 # Configurar PostgreSQL para habilitar los logs detallados
 RUN echo "log_min_messages = info" >> /usr/share/postgresql/postgresql.conf.sample
@@ -26,12 +30,18 @@ RUN echo "log_duration = on" >> /usr/share/postgresql/postgresql.conf.sample
 
 ## * ARCHIVE_MODE = on: Activa el modo de archivado, permitiendo que los WAL logs sean archivados.
 
-## * ARCHIVE_COMMAND = 'test ! -f /backups/%f && cp %p /backups/%f': Define el comando para archivar
-##      los WAL logs. Este comando verifica si el archivo ya existe en /backups y, si no existe, copia el archivo.
+## * ARCHIVE_COMMAND = pgbackrest --stanza=bd2_2s24 archive-push %p:
+##      Comando que se ejecuta para archivar los WAL logs.
+##      %p: Ruta del archivo WAL log a archivar.
+##      --stanza=bd2_2s24: Nombre de la stanza a la que pertenecen los WAL logs.
+##      archive-push: Comando de pgBackRest para archivar los WAL logs.
+
+## * MAX_WAL_SENDERS = 3: Número máximo de conexiones de replicación simultáneas permitidas.
 
 RUN echo "wal_level = replica" >> /usr/share/postgresql/postgresql.conf.sample
 RUN echo "archive_mode = on" >> /usr/share/postgresql/postgresql.conf.sample
-RUN echo "archive_command = 'test ! -f /backups/%f && cp %p /backups/%f'" >> /usr/share/postgresql/postgresql.conf.sample
+RUN echo "archive_command = 'pgbackrest --stanza=bd2_2s24 archive-push %p'" >> /usr/share/postgresql/postgresql.conf.sample
+RUN echo "max_wal_senders = 3" >> /usr/share/postgresql/postgresql.conf.sample
 
 # Instalar pgBackRest (Herramienta para gestión de backups en posgreSQL)
 RUN apt-get update && apt-get install -y pgbackrest
@@ -41,6 +51,10 @@ RUN mkdir -p /etc/pgbackrest
 
 # Copiar el archivo de configuración local al contenedor
 COPY pgbackrest.conf /etc/pgbackrest/pgbackrest.conf
+
+# Script para inicializar pgBackRest y crear la stanza automáticamente
+COPY initialize_pgbackrest.sh /docker-entrypoint-initdb.d/
+RUN chmod +x /docker-entrypoint-initdb.d/initialize_pgbackrest.sh
 
 # INICIO FIX
 
