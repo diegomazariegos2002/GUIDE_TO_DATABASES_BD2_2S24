@@ -1,4 +1,4 @@
-# Clase 5-6 Backups (pgdump y pgbackrest)
+# Clase 5-6-7 Backups (pgdump y pgbackrest)
 ## Full Backup PostgreSQL (Método 1: pgdump)
 
 ### Creación Full Backup
