@@ -1,0 +1,551 @@
+{
+	"info": {
+		"_postman_id": "b4bfdd22-c9d3-4612-9d08-e2a79176fcaf",
+		"name": "Películas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34419739",
+		"_collection_link": "https://www.postman.com/lively-trinity-894163/workspace/bd2-practica3/collection/34419739-b4bfdd22-c9d3-4612-9d08-e2a79176fcaf?action=share&source=collection_link&creator=34419739"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/pelicula/index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/pelicula/index",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"index"
+					]
+				},
+				"description": "# Get pelicula/index\n\nThis endpoint is used to retrieve a response succesfuly to peliculas endpoint's.\n\n## Response\n\nUpon a successful request, the server will respond with a status code of 200 and a JSON object containing an array of series. Each series object includes the following properties:\n\n> {  \n\"message\": \"This is the landing page NodeJs - Peliculas\"  \n}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/guardarPelicula",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Title\": \"Barbie\",\n\t\"Year\": 2023,\n\t\"Rating\": 3,\n\t\"Country\": \"United States\",\n\t\"Principal_Language\": \"English\",\n\t\"Director_name\": \"Erwin Vásquez\",\n\t\"Clasification\": \"B\",\n\t\"Price\": 6,\n\t\"Genre\": \"Comedy\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula"
+					]
+				},
+				"description": "Este endpoint te permite guardar una nueva película. La solicitud debe ser enviada a través de un método HTTP POST a `http://localhost:5000/guardarPelicula`. El cuerpo de la solicitud debe estar en formato JSON sin procesar e incluir los siguientes parámetros:\n\n- **Título** (cadena): El título de la película.\n    \n- **Año** (número): El año en que se lanzó la película.\n    \n- **Género** (cadena): El género de la película.\n    \n- **Clasificación** (cadena): La clasificación por edad de la película.\n    \n- **País** (cadena): El país de origen de la película.\n    \n- **Idioma Principal** (cadena): El idioma principal en el que se habla en la película.\n    \n- **Nombre del Director** (cadena): El nombre del director de la película.\n    \n- **Precio** (número): El precio de la película.\n    \n\nTras una ejecución exitosa, la respuesta tendrá un código de estado 201 y un tipo de contenido de `application/json`. El cuerpo de la respuesta incluirá un mensaje y los detalles de la película guardada, incluido su identificador único (_id) y versión (__v)."
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/guardarPelicula",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Title\": \"Cadena Perpetua\",\n    \"Year\": 1994,\n    \"Genre\": \"Drama\",\n    \"Rating\": 9.3,\n    \"Country\": \"USA\",\n    \"Principal_Language\": \"English\",\n    \"Director_name\": \"Frank Darabont\",\n    \"Clasification\": \"NC-17\",\n    \"Price\": 25.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/pelicula",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pelicula"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Movie created\",\n    \"id\": \"movie:1729111077304\"\n}"
+				},
+				{
+					"name": "http://localhost:5000/guardarPelicula",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Title\": \"Saw X\",\n\t\"Year\": 2023,\n\t\"Rating\": 4.5,\n\t\"Country\": \"United States\",\n\t\"Principal_Language\": \"English\",\n\t\"Director_name\": \"Diego Mazariegos\",\n\t\"Clasification\": \"R\",\n\t\"Price\": 20,\n\t\"Genre\": \"Slasher\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/pelicula",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pelicula"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Movie created\",\n    \"id\": \"movie:1729111843603\"\n}"
+				},
+				{
+					"name": "http://localhost:5000/guardarPelicula",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Title\": \"Insidious 4\",\n\t\"Year\": 2024,\n\t\"Rating\": 3,\n\t\"Country\": \"United States\",\n\t\"Principal_Language\": \"English\",\n\t\"Director_name\": \"Felipe Ruiz\",\n\t\"Clasification\": \"B15\",\n\t\"Price\": 8,\n\t\"Genre\": \"Terror\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/pelicula",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"pelicula"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Movie created\",\n    \"id\": \"movie:1729111897284\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/pelicula",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/pelicula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula"
+					]
+				},
+				"description": "# Get Series\n\nThis endpoint is used to retrieve a list of series.\n\n## Response\n\nUpon a successful request, the server will respond with a status code of 200 and a JSON object containing an array of series. Each series object includes the following properties:\n\n- `_id` (string): The unique identifier for the series.\n- `Year` (number): The year the series was released.\n- `Genre` (string): The genre of the series.\n- `Rating` (number): The rating of the series.\n- `Seasons` (number): The total number of seasons of the series.\n- `Current_Season` (number): The current season of the series.\n- `Price` (number): The price of the series.\n- `__v` (number): Version key."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/pelicula/movie:1714013965541",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"movie:1714013965541"
+					]
+				},
+				"description": "This endpoint makes an HTTP GET request to retrieve information about a specific TV series. The response will be in JSON format and will include details such as the series ID, year, genre, rating, number of seasons, current season, and price."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Title\": \"Insidious 4\",\n\t\"Year\": 2024,\n\t\"Rating\": 4,\n\t\"Country\": \"United States\",\n\t\"Principal_Language\": \"English\",\n\t\"Director_name\": \"Felipe Ruiz\",\n\t\"Clasification\": \"B15\",\n\t\"Price\": 8,\n\t\"Genre\": \"Terror\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula/movie:1714004473674",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"movie:1714004473674"
+					]
+				},
+				"description": "This endpoint allows you to update a specific series by making an HTTP PUT request to the given URL. The request should include the series details in the request body.\n\n### Request Body\n\n- Year (number): The year the series was released.\n- Genre (string): The genre of the series.\n- Rating (number): The rating of the series.\n- Seasons (number): The total number of seasons of the series.\n- Current_Season (number): The current season of the series.\n- Price (number): The price of the series.\n    \n\n### Response\n\nUpon a successful update, the API will return a status code of 200 and a JSON response containing a message and the updated series details including its ID, year, genre, rating, seasons, current season, price, and version.\n\nExample:\n\n``` json\n{\n    \"message\": \"\",\n    \"serie\": {\n        \"_id\": \"\",\n        \"Year\": 0,\n        \"Genre\": \"\",\n        \"Rating\": 0,\n        \"Seasons\": 0,\n        \"Current_Season\": 0,\n        \"Price\": 0,\n        \"__v\": 0\n    }\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/:id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/pelicula/movie:1714004752249",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"movie:1714004752249"
+					]
+				},
+				"description": "This endpoint sends an HTTP DELETE request to [http://localhost:5000/serie/662617aa9b2b040420382836](http://localhost:5000/serie/662617aa9b2b040420382836) to delete a specific resource.\n\nThe last execution of this request returned a 404 status code with a JSON response containing an error message."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/genre/:genre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/pelicula/genre/Terror",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"genre",
+						"Terror"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/by/RClasification-or-High",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula/by/RClasification-or-High",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"by",
+						"RClasification-or-High"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/by/Director/:director",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula/by/Director/Diego Mazariegos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"by",
+						"Director",
+						"Diego Mazariegos"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/by/PriceLowerThan10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula/by/PriceLowerThan10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"by",
+						"PriceLowerThan10"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/by/Year/:year",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula/by/Year/1994",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"by",
+						"Year",
+						"1994"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/Price/Average",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula/Price/Average",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"Price",
+						"Average"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/Price/Average/Genre/:genre",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula/Price/Average/Genre/Terror",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"Price",
+						"Average",
+						"Genre",
+						"Terror"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/pelicula/by/Keyword/:keyword",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/pelicula/by/Keyword/x",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"pelicula",
+						"by",
+						"Keyword",
+						"x"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		}
+	]
+}

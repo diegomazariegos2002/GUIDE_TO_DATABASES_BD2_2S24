@@ -1,0 +1,24 @@
+# Pasos ejecutar el proyecto
+
+## Comando a ejecutar .yml
+
+`docker-compose -f ./docker/docker-compose-dev.yml up`
+
+
+## Comando para ejecutar el proyecto
+
+`npm i`
+
+`npm run dev`
+
+## Salida esperada en consola
+
+![alt text](./images/image.png)
+
+## Comandos para apagar o reiniciar contendores en caso de modificar .env_development
+
+```
+docker-compose -f ./docker/docker-compose-dev.yml down
+
+docker-compose -f ./docker/docker-compose-dev.yml up --build
+```

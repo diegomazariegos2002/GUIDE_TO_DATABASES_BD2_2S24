@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "2e3123d1-f419-4edf-877b-8a87e71f3dbb",
+		"name": "Series",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34419739",
+		"_collection_link": "https://www.postman.com/lively-trinity-894163/workspace/bd2-practica3/collection/15446972-2e3123d1-f419-4edf-877b-8a87e71f3dbb?action=share&source=collection_link&creator=34419739"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/guardarSerie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Title\": \"Mind Games\",\n    \"Year\": 2018,\n    \"Genre\": \"Psychological Thriller\",\n    \"Rating\": 9.1,\n    \"Seasons\": 7,\n    \"Current_Season\": 7,\n    \"Price\": 24.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/serie/guardarSerie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"guardarSerie"
+					]
+				},
+				"description": "Este endpoint te permite guardar una nueva serie de televisión. La solicitud debe ser enviada a través de un método HTTP POST a [http://localhost:5000/guardarSerie](http://localhost:5000/guardarSerie). El cuerpo de la solicitud debe estar en formato JSON sin procesar e incluir los siguientes parámetros:\n\n- **Año** (número): El año en que se lanzó la serie.\n- **Género** (cadena): El género de la serie.\n- **Clasificación** (número): La clasificación de la serie.\n- **Temporadas** (número): El número total de temporadas de la serie.\n- **Temporada_Actual** (número): La temporada actual de la serie.\n- **Precio** (número): El precio de la serie.\n    \n\nTras una ejecución exitosa, la respuesta tendrá un código de estado 201 y un tipo de contenido de `application/json`. El cuerpo de la respuesta incluirá un mensaje y los detalles de la serie guardada, incluido su identificador único (_id) y versión (__v)."
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/guardarSerie",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Title\":\"Greys Anatomy\",\n  \"Year\":2005,\n  \"Rating\":5,\n  \"Seasons\":21,\n  \"Current_Season\":20,\n  \"Price\":20,\n  \"Genre\":\"Medical\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/serie/guardarSerie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"serie",
+								"guardarSerie"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Serie guardada con éxito\",\n    \"serie\": {\n        \"Title\": \"Greys Anatomy\",\n        \"Year\": 2005,\n        \"Genre\": \"Medical\",\n        \"Rating\": 5,\n        \"Seasons\": 21,\n        \"Current_Season\": 20,\n        \"Price\": 20,\n        \"_id\": \"671000f818228d7abc7fade7\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "http://localhost:5000/guardarSerie",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Title\": \"The Time Machine\",\n    \"Year\": 2019,\n    \"Genre\": \"Science Fiction\",\n    \"Rating\": 8.4,\n    \"Seasons\": 5,\n    \"Current_Season\": 5,\n    \"Price\": 19.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/serie/guardarSerie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"serie",
+								"guardarSerie"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Serie guardada con éxito\",\n    \"serie\": {\n        \"Title\": \"The Time Machine\",\n        \"Year\": 2019,\n        \"Genre\": \"Science Fiction\",\n        \"Rating\": 8.4,\n        \"Seasons\": 5,\n        \"Current_Season\": 5,\n        \"Price\": 19.99,\n        \"_id\": \"67101c3518228d7abc7fade9\",\n        \"__v\": 0\n    }\n}"
+				},
+				{
+					"name": "http://localhost:5000/guardarSerie",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Title\": \"Mind Games\",\n    \"Year\": 2018,\n    \"Genre\": \"Psychological Thriller\",\n    \"Rating\": 9.1,\n    \"Seasons\": 7,\n    \"Current_Season\": 7,\n    \"Price\": 24.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/serie/guardarSerie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"serie",
+								"guardarSerie"
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"message\": \"Serie guardada con éxito\",\r\n    \"serie\": {\r\n        \"Title\": \"Mind Games\",\r\n        \"Year\": 2018,\r\n        \"Genre\": \"Psychological Thriller\",\r\n        \"Rating\": 9.1,\r\n        \"Seasons\": 7,\r\n        \"Current_Season\": 7,\r\n        \"Price\": 24.99,\r\n        \"_id\": \"67101cb718228d7abc7fadeb\",\r\n        \"__v\": 0\r\n    }\r\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/serie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie"
+					]
+				},
+				"description": "# Get Series\n\nThis endpoint is used to retrieve a list of series.\n\n## Response\n\nUpon a successful request, the server will respond with a status code of 200 and a JSON object containing an array of series. Each series object includes the following properties:\n\n- `_id` (string): The unique identifier for the series.\n- `Year` (number): The year the series was released.\n- `Genre` (string): The genre of the series.\n- `Rating` (number): The rating of the series.\n- `Seasons` (number): The total number of seasons of the series.\n- `Current_Season` (number): The current season of the series.\n- `Price` (number): The price of the series.\n- `__v` (number): Version key."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/66260a372fa29fca850d9df2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/671000f818228d7abc7fade7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"671000f818228d7abc7fade7"
+					]
+				},
+				"description": "This endpoint makes an HTTP GET request to retrieve information about a specific TV series. The response will be in JSON format and will include details such as the series ID, year, genre, rating, number of seasons, current season, and price."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/66260e71fc08708303ea212e",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"Title\":\"The Resident\",\n  \"Year\":2018,\n  \"Rating\":4.5,\n  \"Seasons\":7,\n  \"Current_Season\":6,\n  \"Price\":20,\n  \"Genre\":\"Medical\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/serie/6629d44d0533a8dd6bdc6e13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"6629d44d0533a8dd6bdc6e13"
+					]
+				},
+				"description": "This endpoint allows you to update a specific series by making an HTTP PUT request to the given URL. The request should include the series details in the request body.\n\n### Request Body\n\n- Year (number): The year the series was released.\n- Genre (string): The genre of the series.\n- Rating (number): The rating of the series.\n- Seasons (number): The total number of seasons of the series.\n- Current_Season (number): The current season of the series.\n- Price (number): The price of the series.\n    \n\n### Response\n\nUpon a successful update, the API will return a status code of 200 and a JSON response containing a message and the updated series details including its ID, year, genre, rating, seasons, current season, price, and version.\n\nExample:\n\n``` json\n{\n    \"message\": \"\",\n    \"serie\": {\n        \"_id\": \"\",\n        \"Year\": 0,\n        \"Genre\": \"\",\n        \"Rating\": 0,\n        \"Seasons\": 0,\n        \"Current_Season\": 0,\n        \"Price\": 0,\n        \"__v\": 0\n    }\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/662614b96b16b34038dc141f",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/6629d49f0533a8dd6bdc6e15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"6629d49f0533a8dd6bdc6e15"
+					]
+				},
+				"description": "This endpoint sends an HTTP DELETE request to [http://localhost:5000/serie/662617aa9b2b040420382836](http://localhost:5000/serie/662617aa9b2b040420382836) to delete a specific resource.\n\nThe last execution of this request returned a 404 status code with a JSON response containing an error message."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/series-by-genre/Science Fiction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/series-by-genre/Science Fiction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"series-by-genre",
+						"Science Fiction"
+					]
+				},
+				"description": "This endpoint retrieves a list of series belonging to the \"Science Fiction\" genre.\n\n### Request\n\n`GET /serie/series-by-genre/Science Fiction`\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": [\n        {\n            \"_id\": \"\",\n            \"Year\": 0,\n            \"Genre\": \"\",\n            \"Rating\": 0,\n            \"Seasons\": 0,\n            \"Current_Season\": 0,\n            \"Price\": 0,\n            \"__v\": 0\n        }\n    ]\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/series-seasons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/series-seasons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"series-seasons"
+					]
+				},
+				"description": "\nThis endpoint makes an HTTP GET request to retrieve information about series and their seasons. The response will be in JSON format and will include an array of series, with each series object containing details such as ID, year, genre, rating, seasons, current season, and price. The response will also include a property \"__v\" representing the version. \n"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/current-season/4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/current-season/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"current-season",
+						"5"
+					]
+				},
+				"description": "This endpoint makes an HTTP GET request to retrieve information about the current season of a TV series. The request should be sent to [http://localhost:5000/serie/current-season/4](http://localhost:5000/serie/current-season/4).\n\nThe response will have a status code of 200 and a content type of application/json. The response body will contain an array of series, with each series object including properties such as _id, Year, Genre, Rating, Seasons, Current_Season, and Price."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/lower-price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/lower-price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"lower-price"
+					]
+				},
+				"description": "This endpoint makes an HTTP GET request to retrieve the series with the lowest price. The response will contain an array of series, with each series object including the year, genre, rating, seasons, current season, and price. The response will be in JSON format."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/series-by-year/2000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/series-by-year/2018",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"series-by-year",
+						"2018"
+					]
+				},
+				"description": "This endpoint retrieves a list of series for the year 2022.\n\n### Request\n\n#### HTTP GET\n\n```\nhttp://localhost:5000/serie/series-by-year/2022\n\n ```\n\n### Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\nThe response will contain an array of series, with each series object containing the following fields:\n\n- `_id` (string): The unique identifier for the series\n- `Year` (number): The year of the series\n- `Genre` (string): The genre of the series\n- `Rating` (number): The rating of the series\n- `Seasons` (number): The total number of seasons of the series\n- `Current_Season` (number): The current season of the series\n- `Price` (number): The price of the series\n- `__v` (number): Version control field"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/series-price-average",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/series-price-average",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"series-price-average"
+					]
+				},
+				"description": "This endpoint makes an HTTP GET request to retrieve the average price of a series. The response will contain the average price in JSON format.\n\nThe last execution of this request returned a 200 status with the following JSON response:\n\n``` json\n{\n    \"averagePrice\": 0\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/series-by-rating-sorted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/series-by-rating-sorted",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"series-by-rating-sorted"
+					]
+				},
+				"description": "This endpoint makes an HTTP GET request to retrieve a list of series sorted by their ratings. The response will contain a JSON object with an array of series, where each series object includes properties such as _id, Year, Genre, Rating, Seasons, Current_Season, Price, and __v. The status of the last execution was 200, and the content type of the response was application/json."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/serie/keyword-search/angel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/serie/keyword-search/fla",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"serie",
+						"keyword-search",
+						"fla"
+					]
+				},
+				"description": "# Retrieve Series by Keyword\n\nThis endpoint makes an HTTP GET request to retrieve series based on a specific keyword.\n\n## Request\n\n### Endpoint\n\n`GET http://localhost:5000/serie/keyword-search/angel`\n\n## Response\n\n- Status: 200\n- Content-Type: application/json\n    \n\n``` json\n{\n    \"series\": []\n}\n\n ```"
+			},
+			"response": []
+		}
+	]
+}

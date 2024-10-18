@@ -1,0 +1,105 @@
+// ================================== Peliculas ==================================
+0.
+{
+    "Title": "Cadena Perpetua",
+    "Year": 1994,
+    "Genre": "Drama",
+    "Rating": 9.3,
+    "Country": "USA",
+    "Principal_Language": "English",
+    "Director_name": "Frank Darabont",
+    "Clasification": "NC-17",
+    "Price": 25.99
+}
+{
+    "message": "Movie created",
+    "id": "movie:1714013933477"
+}
+
+// CRUD - CREAR
+1.
+{
+  "Title":"Saw X",
+  "Year":2023,
+  "Rating":4.5,
+  "Country":"United States",
+  "Principal_Language":"English",
+  "Director_name":"Diego Mazariegos",
+  "Clasification":"R",
+  "Price":20,
+  "Genre":"Slasher"
+}
+{
+    "message": "Movie created",
+    "id": "movie:1714013949285"
+}
+2.
+{
+  "Title":"Insidious 4",
+  "Year":2024,
+  "Rating":3,
+  "Country":"United States",
+  "Principal_Language":"English",
+  "Director_name":"Felipe Ruiz",
+  "Clasification":"B15",
+  "Price":8,
+  "Genre":"Terror"
+}
+{
+    "message": "Movie created",
+    "id": "movie:1714013965540"
+}
+3.
+{
+  "Title":"Barbie",
+  "Year":2023,
+  "Rating":3,
+  "Country":"United States",
+  "Principal_Language":"English",
+  "Director_name":"Erwin Vásquez",
+  "Clasification":"B",
+  "Price":6,
+  "Genre":"Comedy"
+}
+{
+    "message": "Movie created",
+    "id": "movie:1714013978586"
+}
+4.
+{
+  "Title":"Terrifier 2",
+  "Year":2023,
+  "Rating":5,
+  "Country":"United States",
+  "Principal_Language":"English",
+  "Director_name":"Felipe Ruiz",
+  "Clasification":"R",
+  "Price":12,
+  "Genre":"Terror"
+}
+{
+    "message": "Movie created",
+    "id": "movie:1714013988422"
+}
+
+7. Promedio de precio de todas las películas --- (Debería devolver 11.5)
+// CRUD ELIMINAR
+Eliminar película 3
+// Ejecutar endpoint obtener todas
+// Ejecutar endpoint obtener película 4
+// CRUD EDITAR
+Actualizar película 2 - cambiar rating de 3 a 4
+// Ejecutar endpoint obtener todas
+// Ejecutar endpoint obtener película 4
+
+// ENDPOINTS DE CONSULTAS
+
+2. Buscar películas por género (Terror)---- (Debería de devolver película 2, 4)
+3. Mostrar películas con una clasificación R ----(pelicula 4, 1 deberían mostrarse)
+4. Encontrar películas dirigidas por un director específico (Diego Mazariegos)--- (Debería devolver película 1)
+5. Buscar películas con un precio inferior a 10 ----(Debería devolver película 2)
+6. Recuperar películas lanzadas en un año específico (2023)----(Debería devolver las películas 1 y 4)
+7. Promedio de precio de todas las películas--- (Debería devolver 13.33 )
+8. Promedio de precio de todas las películas en base a un género (Terror)--- (Debería devolver 10)
+9. Buscar películas con una palabra clave en el título (x) ---- (Debería devolver película 1)
+9. Buscar películas con una palabra clave en el título (ter)----(Debería devolver película 4)

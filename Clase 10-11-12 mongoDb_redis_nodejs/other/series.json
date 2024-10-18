@@ -1,0 +1,74 @@
+[
+    {
+        "Title": "The Time Machine",
+        "Year": 2019,
+        "Genre": "Science Fiction",
+        "Rating": 8.4,
+        "Seasons": 5,
+        "Current_Season": 5,
+        "Price": 19.99
+    },
+    {
+        "Title": "Mind Games",
+        "Year": 2018,
+        "Genre": "Psychological Thriller",
+        "Rating": 9.1,
+        "Seasons": 7,
+        "Current_Season": 7,
+        "Price": 24.99
+    },
+    {
+        "Title": "Realm of Magic",
+        "Year": 2017,
+        "Genre": "Fantasy",
+        "Rating": 9.7,
+        "Seasons": 4,
+        "Current_Season": 4,
+        "Price": 32.99
+    },
+    {
+        "Title": "The Enigma Files",
+        "Year": 2016,
+        "Genre": "Mystery",
+        "Rating": 8.0,
+        "Seasons": 6,
+        "Current_Season": 6,
+        "Price": 15.99
+    },
+    {
+        "Title": "Eternal Love",
+        "Year": 2023,
+        "Genre": "Romantic Drama",
+        "Rating": 8.6,
+        "Seasons": 3,
+        "Current_Season": 3,
+        "Price": 23.99
+    },
+    {
+        "Title": "Wildlife Chronicles",
+        "Year": 2015,
+        "Genre": "Nature Documentary",
+        "Rating": 9.4,
+        "Seasons": 2,
+        "Current_Season": 2,
+        "Price": 17.99
+    },
+    {
+        "Title": "The Haunting",
+        "Year": 2014,
+        "Genre": "Supernatural Horror",
+        "Rating": 7.8,
+        "Seasons": 4,
+        "Current_Season": 4,
+        "Price": 19.99
+    },
+    {
+        "Title": "Code Red",
+        "Year": 2011,
+        "Genre": "Action Thriller",
+        "Rating": 8.3,
+        "Seasons": 5,
+        "Current_Season": 5,
+        "Price": 26.99
+    }
+]
