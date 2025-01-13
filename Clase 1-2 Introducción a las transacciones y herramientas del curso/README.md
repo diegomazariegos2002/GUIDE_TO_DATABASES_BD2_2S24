@@ -2,14 +2,6 @@
 
 En esta clase, exploraremos los conceptos fundamentales de las transacciones y las herramientas que utilizaremos a lo largo del curso. Comenzaremos con una revisión de los principios teóricos, seguida de la instalación y configuración de las herramientas esenciales como el cliente SQL y Docker Desktop. Además, aprenderemos a crear y gestionar contenedores Docker para PostgreSQL, asegurando un entorno de desarrollo robusto y eficiente.
 
-## Presentaciones del curso (teoría)
-
-[Clase 1](https://www.canva.com/design/DAGL0dx94lA/CCUEuKefnn6emOkwPNIj2g/view?utm_content=DAGL0dx94lA&utm_campaign=designshare&utm_medium=link&utm_source=editor)
-
-[Clase 2](https://www.canva.com/design/DAGMA2pUaIc/RNVWPSgmMMk3jbrQCwQC1w/edit?utm_content=DAGMA2pUaIc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
-
-
-
 ## Instalación de herramientas
 
 ### Cliente SQL
