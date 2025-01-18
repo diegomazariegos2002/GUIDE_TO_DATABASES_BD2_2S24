@@ -9,7 +9,10 @@ En esta clase se abordaran los siguientes temas:
 - Algoritmos de consenso distribuidos.
 - Gestión de fallos en sistemas distribuidos.
 - Casos de uso de bases de datos distribuidas.
-- Ejemplo práctico de bases de datos distribuidas, utilizando pgEdge extesión de Postgres.
+- Introducción a bases de datos distribuidas tomando como base conceptos iniciales.
+    - Traefik 
+    - Docker Compose
+    - Postgres con pgAdmin    
 
 ## Definición y características de los sistemas distribuidos
 
@@ -18,6 +21,17 @@ Un sistema distribuido es un conjunto de computadoras interconectadas que se com
 
 ## Ejemplo práctico de bases de datos distribuidas
 
-En esta clase se realizará un ejemplo práctico de bases de datos distribuidas, utilizando la extensión pgEdge de Postgres. Para ello, se seguirán los siguientes pasos:
+En esta clase se realizará un ejemplo práctico utilizando Traefik, Docker Compose, Postgres y pgAdmin. Para ello, se seguirán los siguientes pasos:
 
+1. Crear un archivo de configuración para Docker Compose.
+
+y ejecutar los comandos:
+
+```bash
+docker compose up -d
+```
+
+para más detalle revisar el [siguiente enlace](https://blog.faizahmed.in/how-much-do-you-know-traefik-proxy) 
+
+que ayuda mucho para comprender las fundamentos de los siguientes ejemplos de bases de datos distribuidas.
 

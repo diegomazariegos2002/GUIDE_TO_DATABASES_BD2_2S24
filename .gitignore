@@ -9,3 +9,5 @@ src/pg1-path/*
 
 **/pg1-path/
 **/backups/
+**/postgres-data/
+**/pgadmin-data/
