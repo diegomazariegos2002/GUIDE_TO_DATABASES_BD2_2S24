@@ -35,6 +35,7 @@ services:
         - "traefik.http.routers.traefik.middlewares=strip"
         - "traefik.http.middlewares.strip.stripprefix.prefixes=/traefik"
 
+  # Nodo PostgreSQL n1
   postgres-n1:
     image: pgedge/pgedge:latest
     environment:
@@ -55,28 +56,7 @@ services:
         - "node_name=n1"
         - "traefik.enable=false"
 
-  pgcat-n1:
-    image: pgedge/pgcat:1.0
-    ports:
-      - target: 6432
-        published: 6432
-        protocol: tcp
-        mode: host
-    volumes:
-      - "./pgcat-n1.toml:/etc/pgcat/pgcat.toml"
-    networks:
-      - traefik
-      - database
-    deploy:
-      labels:
-        - "node_name=n1"
-        - "traefik.enable=true"
-        - "traefik.docker.network=db_traefik"
-        - "traefik.tcp.routers.router-db-1.rule=HostSNI(`*`)"
-        - "traefik.tcp.routers.router-db-1.entrypoints=postgres"
-        - "traefik.tcp.routers.router-db-1.service=svc-db-1"
-        - "traefik.tcp.services.svc-db-1.loadbalancer.server.port=6432"
-
+  # Nodo PostgreSQL n2
   postgres-n2:
     image: pgedge/pgedge:latest
     environment:
@@ -97,27 +77,27 @@ services:
         - "node_name=n2"
         - "traefik.enable=false"
 
-  pgcat-n2:
+  # Nuevo servicio: pgcat unificado
+  pgcat-universal:
     image: pgedge/pgcat:1.0
     ports:
       - target: 6432
-        published: 6442
+        published: 6432
         protocol: tcp
         mode: host
     volumes:
-      - "./pgcat-n2.toml:/etc/pgcat/pgcat.toml"
+      - "./pgcat.toml:/etc/pgcat/pgcat.toml"
     networks:
       - traefik
       - database
     deploy:
       labels:
-        - "node_name=n2"
         - "traefik.enable=true"
         - "traefik.docker.network=db_traefik"
-        - "traefik.tcp.routers.router-db-2.rule=HostSNI(`*`)"
-        - "traefik.tcp.routers.router-db-2.entrypoints=postgres"
-        - "traefik.tcp.routers.router-db-2.service=svc-db-2"
-        - "traefik.tcp.services.svc-db-2.loadbalancer.server.port=6432"
+        - "traefik.tcp.routers.router-db.rule=HostSNI(`*`)"
+        - "traefik.tcp.routers.router-db.entrypoints=postgres"
+        - "traefik.tcp.routers.router-db.service=svc-db"
+        - "traefik.tcp.services.svc-db.loadbalancer.server.port=6432"
 
 networks:
   traefik:
