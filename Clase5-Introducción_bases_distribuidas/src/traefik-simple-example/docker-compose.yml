@@ -1,28 +1,83 @@
-version: '3.6'
+version: '3.6'  
+# Indica la versión del formato de docker-compose que se utilizará.
 
+# services es la sección donde se definen los servicios que se ejecutarán en contenedores.
 services:
+  
+  # Se define un servicio llamado "traefik" que ejecutará el contenedor de Traefik.
   traefik:
-    image: "traefik:v2.9"
-    container_name: "traefik"
+    
+    # Se utiliza la imagen de la versión 2.9 de Traefik, que es el proxy/reverse proxy.
+    image: "traefik:v2.9"  
+    
+    # Asigna el nombre "traefik" al contenedor en lugar de uno generado automáticamente.
+    container_name: "traefik"  
+    
+    # Configuración de comandos para Traefik.
     command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--log.level=debug"
-      - "--entrypoints.web.address=:1337"
+      # Habilita la API de Traefik y el dashboard en modo inseguro (sin protección) para pruebas/desarrollo.
+      - "--api.insecure=true"  
+      
+      # Activa el proveedor Docker, lo que permite a Traefik detectar contenedores con etiquetas (labels) y enrutar tráfico hacia ellos.
+      - "--providers.docker=true"  
+      
+      # Indica que, por defecto, Traefik NO expondrá automáticamente todos los contenedores. 
+      # Solo expondrá aquellos que tengan la etiqueta "traefik.enable=true".
+      - "--providers.docker.exposedbydefault=false"  
+      
+      # Establece el nivel de logs (registros) en "debug" para ver más información al depurar.
+      - "--log.level=debug"  
+      
+      # Crea un "entrypoint" (punto de entrada) llamado "web" que escuchará en el puerto 1337 dentro del contenedor.
+      # (Este es el puerto interno; luego se mapeará con la sección 'ports' abajo.)
+      - "--entrypoints.web.address=:1337"  
+    
+    # Configuración de puertos expuestos y mapeados entre el host y el contenedor.
     ports:
-      - "1337:1337"
-      - "9090:8080"
+      # Mapea el puerto 1337 del host (máquina local) al puerto 1337 del contenedor, 
+      # es decir, el entrypoint "web" estará accesible en http://localhost:1337 en el host.
+      - "1337:1337"  
+      
+      # Mapea el puerto 9090 del host al 8080 del contenedor. 
+      # El Dashboard de Traefik (API Insecure) por defecto se sirve en el 8080 dentro del contenedor. 
+      # Por lo tanto, se podrá acceder al dashboard desde http://localhost:9090.
+      - "9090:8080"  
+    
+    # Monta volúmenes necesarios para que Traefik funcione correctamente.
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-
+      # Monta el socket de Docker como solo lectura. 
+      # Esto le permite a Traefik comunicarse con el daemon de Docker y descubrir contenedores, 
+      # leer sus labels, etc.
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"  
+    
+  # Se define un servicio llamado "whoami" que ejecutará el contenedor de prueba whoami.
   whoami:
-    image: "traefik/whoami"
-    container_name: "iamfoo"
-    command: "--port 80 --name iamfoo"
+    
+    # Imagen simple que devuelve información sobre sí misma. Útil para pruebas.
+    image: "traefik/whoami"  
+    
+    # Nombre del contenedor para identificarlo en Docker.
+    container_name: "iamfoo"  
+    
+    # Instrucciones al contenedor whoami para que escuche en el puerto 80 y se identifique como "iamfoo".
+    command: "--port 80 --name iamfoo"  
+    
+    # Configuración de puertos expuestos y mapeados entre el host y el contenedor.
     ports:
-      - "8080:80"
+      # Mapea el puerto 8080 del host al puerto 80 del contenedor whoami.
+      # Permite acceder directamente a whoami en http://localhost:8080 si se desea.
+      - "8080:80"  
+    
+    # Etiquetas para configurar cómo Traefik manejará este servicio.
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.whoami.entrypoints=web"
-      - "traefik.http.routers.whoami.rule=(Host(`localhost`) && PathPrefix(`/whoami`))"
+      # Indica a Traefik que "expondrá" o enrutar tráfico a este contenedor.
+      - "traefik.enable=true"  
+      
+      # Define que el router llamado "whoami" se asocia al entrypoint "web" (que está configurado en :1337).
+      - "traefik.http.routers.whoami.entrypoints=web"  
+      
+      # Regla de enrutamiento para dirigir las peticiones: 
+      # Si la URL cumple que el Host es "localhost" y el path comienza con "/whoami", 
+      # entonces se enruta el tráfico a este servicio. 
+      # Por ejemplo: http://localhost:1337/whoami
+      - "traefik.http.routers.whoami.rule=(Host(`localhost`) && PathPrefix(`/whoami`))"  
