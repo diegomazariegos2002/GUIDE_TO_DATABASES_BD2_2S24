@@ -75,6 +75,9 @@ El Teorema CAP (también llamado Teorema de Brewer) establece que en un sistema 
 | **Casos de uso**        | Sistemas en red local, sin fallos frecuentes.   | Finanzas, bancos, sistemas críticos que requieren consistencia estricta. | Redes sociales, streaming, sistemas con alta demanda y escalabilidad horizontal. |
 | **Ejemplos**            | RDBMS tradicionales en red local.               | MongoDB (modo fuerte), HBase, Zookeeper.       | Cassandra, DynamoDB, Couchbase.                  |
 
+![](images/image_2025-01-27-18-27-12.png)
+
+![](images/image_2025-01-27-18-46-12.png)
 
 ## Ejemplo práctico de introducción para bases de datos distribuidas
 
