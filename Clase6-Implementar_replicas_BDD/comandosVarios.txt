@@ -1,0 +1,14 @@
+docker stack deploy -c ./stack.yaml db
+docker service ls
+docker service scale db_pgcat-universal=0
+docker stack rm db
+
+
+
+docker ps
+docker exec -it d88b /bin/bash
+psql -U app -d defaultdb
+SELECT pg_is_in_recovery();
+ pg_is_in_recovery
+-------------------
+ f
